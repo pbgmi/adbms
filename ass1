@@ -1,0 +1,33 @@
+show dbs
+
+use db1
+
+db.createCollection("stdinfo")
+
+db.stdinfo.insert({"name":"nilesh","age":20,"rollno":31,"marks":87})
+
+db.stdinfo.insert({"name":"neel","age":22,"rollno":32,"marks":76})
+
+db.stdinfo.insert({"name":"suresh","age":19,"rollno":35,"marks":89})
+
+db.stdinfo.insert({"name":"yogesh","age":24,"rollno":34,"marks":84})
+
+db.stdinfo.insert({"name":"rahul","age":21,"rollno":33,"marks":57})
+
+db.stdinfo.find()
+
+db.stdinfo.find().pretty()
+
+db.stdinfo.find().pretty().limit(2).count()
+
+db.stdinfo.count()
+
+db.stdinfo.find().sort({id:1}).pretty()
+
+db.stdinfo.update({"marks":{$gt:84}},{$set:{"age":24}},{multi:ture})
+
+db.stdinfo.remove({"name":"suresh"})
+
+db.stdinfo.find().pretty()
+
+db.stdinfo.drop()
